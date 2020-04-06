@@ -29,13 +29,21 @@ public class Listing_15_05 extends Application {
         borderPane.setBottom(hBox);
 
         // Create and register the handler
-        btUp.setOnAction((ActionEvent e) -> text.setY(text.getY() > 10 ? text.getY() -5 : 10));
+        btUp.setOnAction((ActionEvent e) -> {
+            text.setY(text.getY() > 10 ? text.getY() -5 : 10);
+        });
 
-        btDown.setOnAction((ActionEvent e) -> text.setY(text.getY() < pane.getHeight() ? text.getY() + 5 : pane.getHeight()));
+        btDown.setOnAction((e) -> {
+            text.setY(text.getY() < pane.getHeight() ? text.getY() + 5 : pane.getHeight());
+        });
 
-        btLeft.setOnAction((ActionEvent e) -> text.setX(text.getX() > 0 ? text.getX() - 5 : 0));
+        btLeft.setOnAction(e -> {
+            text.setX(text.getX() > 0 ? text.getX() - 5 : 0);
+        });
 
-        btRight.setOnAction((ActionEvent e) -> text.setX(text.getX() < pane.getWidth() - 100 ? text.getX() + 5 : pane.getWidth() - 100));
+        btRight.setOnAction(e ->
+                text.setX(text.getX() < pane.getWidth() - 100 ? text.getX() + 5 : pane.getWidth() - 100)
+        );
 
         Scene scene = new Scene(borderPane, 400, 350);
         stage.setTitle("AnonymousHandlerDemo");
