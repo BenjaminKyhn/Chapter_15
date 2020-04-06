@@ -12,7 +12,7 @@ public class Listing_15_09 extends Application {
     private CirclePane circlePane = new CirclePane();
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         HBox hBox = new HBox();
         hBox.setSpacing(10);
         hBox.setAlignment(Pos.CENTER);
