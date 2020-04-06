@@ -43,9 +43,8 @@ public class Listing_15_09 extends Application {
             }
         });
 
-        /** The following DOES NOT WORK on my keyboard. For some reason the arrow keys are not registeret, but every
-         * other key works fine. Also if the setOnKeyPressed is changed to setOnKeyReleased it will work with arrow
-         * keys. Very strange.*/
+        /** The following DOES NOT WORK on my keyboard because the arrow keys are used to toggle the buttons and
+         * apparently cannot do both */
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.UP) {
                 circlePane.enlarge();
