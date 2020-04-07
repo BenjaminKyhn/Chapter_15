@@ -10,7 +10,7 @@ import javafx.scene.shape.Ellipse;
 import javafx.stage.Stage;
 
 public class Exercise_15_02 extends Application {
-    private EllipsePane ellipsePane= new EllipsePane();
+    private EllipsePane ellipsePane = new EllipsePane();
 
     @Override
     public void start(Stage stage) {
@@ -28,7 +28,7 @@ public class Exercise_15_02 extends Application {
         BorderPane.setAlignment(hBox, Pos.CENTER);
 
         Scene scene = new Scene(borderPane, 250, 250);
-        stage.setTitle("Rorate Ellipse");
+        stage.setTitle("Rotate Ellipse");
         stage.setScene(scene);
         stage.show();
     }
