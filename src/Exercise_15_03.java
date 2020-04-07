@@ -40,28 +40,32 @@ public class Exercise_15_03 extends Application {
     }
 }
 
-class RectanglePane extends StackPane{
+class RectanglePane extends StackPane {
     private Rectangle rectangle = new Rectangle(50, 50);
 
-    public RectanglePane(){
+    public RectanglePane() {
         getChildren().add(rectangle);
         rectangle.setStroke(Color.BLACK);
         rectangle.setFill(Color.WHITE);
     }
 
-    public void left(){
-        rectangle.setTranslateX(rectangle.getTranslateX() - 5);
+    public void left() {
+        if (rectangle.getTranslateX() > -getWidth() / 2 + rectangle.getWidth() / 2)
+            rectangle.setTranslateX(rectangle.getTranslateX() - 5);
     }
 
-    public void right(){
-        rectangle.setTranslateX(rectangle.getTranslateX() + 5);
+    public void right() {
+        if (rectangle.getTranslateX() < getWidth() / 2 - rectangle.getWidth() / 2)
+            rectangle.setTranslateX(rectangle.getTranslateX() + 5);
     }
 
-    public void up(){
-        rectangle.setTranslateY(rectangle.getTranslateY() - 5);
+    public void up() {
+        if (rectangle.getTranslateY() > -getHeight() / 2 + rectangle.getHeight() / 2)
+            rectangle.setTranslateY(rectangle.getTranslateY() - 5);
     }
 
-    public void down(){
-        rectangle.setTranslateY(rectangle.getTranslateY() + 5);
+    public void down() {
+        if (rectangle.getTranslateY() < getHeight() / 2 - rectangle.getHeight() / 2)
+            rectangle.setTranslateY(rectangle.getTranslateY() + 5);
     }
 }
