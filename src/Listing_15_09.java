@@ -17,7 +17,10 @@ public class Listing_15_09 extends Application {
         hBox.setSpacing(10);
         hBox.setAlignment(Pos.CENTER);
         Button btEnlarge = new Button("Enlarge");
+        btEnlarge.setFocusTraversable(false);
         Button btShrink = new Button("Shrink");
+        btShrink.setFocusTraversable(false);
+
         hBox.getChildren().add(btEnlarge);
         hBox.getChildren().add(btShrink);
 
