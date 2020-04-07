@@ -17,9 +17,9 @@ public class Listing_15_09 extends Application {
         hBox.setSpacing(10);
         hBox.setAlignment(Pos.CENTER);
         Button btEnlarge = new Button("Enlarge");
-        btEnlarge.setFocusTraversable(false);
+        btEnlarge.setFocusTraversable(false); // If traversable the arrow keys cannot be used on the BorderPane
         Button btShrink = new Button("Shrink");
-        btShrink.setFocusTraversable(false);
+        btShrink.setFocusTraversable(false); // If traversable the arrow keys cannot be used on the BorderPane
 
         hBox.getChildren().add(btEnlarge);
         hBox.getChildren().add(btShrink);
@@ -46,8 +46,6 @@ public class Listing_15_09 extends Application {
             }
         });
 
-        /** The following DOES NOT WORK on my keyboard because the arrow keys are used to toggle the buttons and
-         * apparently cannot do both */
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.UP) {
                 circlePane.enlarge();
