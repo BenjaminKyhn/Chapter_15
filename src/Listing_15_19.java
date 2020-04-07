@@ -93,8 +93,8 @@ public class Listing_15_19 extends Application {
                     }
                     else {
                         Scanner scanAString = new Scanner(s); // Scan one point
-                        double y = scanAString.nextDouble();
                         double x = scanAString.nextDouble();
+                        double y = scanAString.nextDouble();
                         points.get(points.size() -1).add(new Point2D(x,y));
                     }
                 }
