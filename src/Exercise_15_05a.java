@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Exercise_15_05 extends Application {
+public class Exercise_15_05a extends Application {
     private TextField tfInvestmentAmount = new TextField();
     private TextField tfNumberOfYears = new TextField();
     private TextField tfAnnualInterestRate = new TextField();
@@ -19,8 +19,8 @@ public class Exercise_15_05 extends Application {
     public void start(Stage stage) {
         // Create UI
         GridPane gridPane = new GridPane();
-        gridPane.setHgap(4);
-        gridPane.setVgap(4);
+        gridPane.setHgap(5);
+        gridPane.setVgap(5);
         gridPane.add(new Label("Investment Amount:"), 0, 0);
         gridPane.add(tfInvestmentAmount, 1, 0);
         gridPane.add(new Label("Number of Years:"), 0, 1);
@@ -29,7 +29,7 @@ public class Exercise_15_05 extends Application {
         gridPane.add(tfAnnualInterestRate, 1, 2);
         gridPane.add(new Label("Future Value:"), 0, 3);
         gridPane.add(tfFutureValue, 1, 3);
-        gridPane.add(btCalculate, 1, 5);
+        gridPane.add(btCalculate, 1, 4);
 
         // Set properties for UI
         gridPane.setAlignment(Pos.CENTER);
