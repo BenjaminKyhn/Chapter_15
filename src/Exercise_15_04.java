@@ -22,7 +22,6 @@ public class Exercise_15_04 extends Application {
 
     @Override
     public void start(Stage stage) {
-        /** Should have used a GridPane instead as it would have looked nicer */
         HBox hBox1 = new HBox();
         HBox hBox2 = new HBox();
         VBox vBox = new VBox();
@@ -32,7 +31,9 @@ public class Exercise_15_04 extends Application {
         vBox.getChildren().addAll(hBox1, hBox2);
 
         hBox1.setAlignment(Pos.CENTER);
+        hBox1.setSpacing(5);
         hBox2.setAlignment(Pos.CENTER);
+        hBox2.setSpacing(5);
         tfN1.setMaxWidth(50);
         tfN2.setMaxWidth(50);
         tfResult.setMaxWidth(50);
@@ -43,7 +44,7 @@ public class Exercise_15_04 extends Application {
         btMultiply.setOnAction(e -> multiply());
         btDivide.setOnAction(e -> divide());
 
-        Scene scene = new Scene(vBox, 300, 200);
+        Scene scene = new Scene(vBox, 330, 52);
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.show();
