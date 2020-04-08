@@ -27,10 +27,11 @@ public class Exercise_15_16 extends Application {
         line.startYProperty().bind(circle1.centerYProperty());
         line.endXProperty().bind(circle2.centerXProperty());
         line.endYProperty().bind(circle2.centerYProperty());
-        double sqrt = Math.abs(Math.sqrt(Math.pow(circle2.getCenterX()-circle1.getCenterX(), 2) + Math.pow(circle2.getCenterY()-circle1.getCenterY(), 2)));
-        Text text = new Text((circle1.getCenterX()+circle2.getCenterX())/2, (circle1.getCenterY()+circle2.getCenterY())/2, String.valueOf(sqrt));
+        Text text = new Text(getMidX(line), getMidY(line), String.valueOf(distance(line)));
+
         pane.getChildren().addAll(line, circle1, circle2, text);
 
+        // Make an event handler because we'll be using the same event 2 times
         EventHandler<MouseEvent> dragCircle = e ->{
             ((Circle)e.getSource()).setCenterX(e.getX());
             ((Circle)e.getSource()).setCenterY(e.getY());
