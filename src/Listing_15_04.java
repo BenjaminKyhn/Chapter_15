@@ -29,11 +29,8 @@ public class Listing_15_04 extends Application {
         borderPane.setBottom(hBox);
 
         // Create and register the handler
-        btUp.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
+        borderPane.setOnKeyPressed(e->{
                 text.setY(text.getY() > 10 ? text.getY() -5 : 10);
-            }
         });
 
         btDown.setOnAction(new EventHandler<ActionEvent>() {
