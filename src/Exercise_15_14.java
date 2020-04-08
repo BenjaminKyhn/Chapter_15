@@ -2,18 +2,18 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Exercise_15_13 extends Application {
+public class Exercise_15_14 extends Application {
     @Override
     public void start(Stage stage) {
-        Rectangle rectangle = new Rectangle(80, 50, 100, 30);
-        rectangle.setStroke(Color.BLACK);
-        rectangle.setFill(Color.WHITE);
-        Pane pane = new Pane(rectangle);
-        Text text = new Text("Mouse point is outside the rectangle");
+        Polygon polyline = new Polygon(30, 10, 60, 30, 50, 70, 35, 35, 10, 50);
+        polyline.setStroke(Color.BLACK);
+        polyline.setFill(Color.WHITE);
+        Pane pane = new Pane(polyline);
+        Text text = new Text("Mouse point is outside the polygon");
 
         pane.setOnMouseMoved(e -> {
             pane.getChildren().remove(text);
@@ -21,10 +21,10 @@ public class Exercise_15_13 extends Application {
             double y = e.getY();
             text.setX(x);
             text.setY(y);
-            if (rectangle.contains(x, y))
-                text.setText("Mouse point is inside the rectangle");
+            if (polyline.contains(x, y))
+                text.setText("Mouse point is inside the polygon");
             else
-                text.setText("Mouse point is outside the rectangle");
+                text.setText("Mouse point is outside the polygon");
             pane.getChildren().add(text);
         });
 
