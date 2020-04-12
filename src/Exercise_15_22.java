@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -9,14 +10,23 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 public class Exercise_15_22 extends Application {
+    private final static double WIDTH = 500;
+    private final static double HEIGHT = 500;
+    private final static double X_RADIUS = WIDTH / 3;
+    private final static double Y_RADIUS = WIDTH / 10;
+    private static Pane pane = new Pane();
+
     @Override
     public void start(Stage stage) throws Exception {
-        final double WIDTH = 500;
-        final double HEIGHT = 500;
-        final double X_RADIUS = WIDTH / 3;
-        final double Y_RADIUS = WIDTH / 10;
-        Pane pane = new Pane();
+        Group cylinder = getCylinder();
+        pane.getChildren().add(cylinder);
+        Scene scene = new Scene(pane, WIDTH, HEIGHT);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    public static Group getCylinder(){
+        Group group = new Group();
         Ellipse ellipse = new Ellipse(WIDTH / 2, HEIGHT / 5, X_RADIUS, Y_RADIUS);
         ellipse.centerXProperty().bind(pane.widthProperty().divide(2));
         ellipse.radiusXProperty().bind(pane.widthProperty().divide(3));
@@ -52,10 +62,7 @@ public class Exercise_15_22 extends Application {
         line2.endXProperty().bind(arc1.centerXProperty().add(arc1.radiusXProperty()));
         line2.endYProperty().bind(arc1.centerYProperty());
 
-        pane.getChildren().addAll(ellipse, arc1, arc2, line1, line2);
-
-        Scene scene = new Scene(pane, WIDTH, HEIGHT);
-        stage.setScene(scene);
-        stage.show();
+        group.getChildren().addAll(ellipse, arc1, arc2, line1, line2);
+        return group;
     }
 }
