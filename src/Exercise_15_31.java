@@ -53,11 +53,23 @@ public class Exercise_15_31 extends Application {
         pt.setAutoReverse(true);
         pt.play();
 
-        pane.setOnMousePressed(e -> pt.pause());
-        pane.setOnMouseReleased(e -> pt.play());
+        pane.setOnKeyPressed(e -> {
+            switch (e.getCode()) {
+                case UP:
+                    pt.setRate(pt.getRate() + 1);
+                    break;
+                case DOWN:
+                    pt.setRate(pt.getRate() - 1);
+                    break;
+                case S: pt.pause(); break;
+                case R: pt.play();
+            }
+        });
 
         Scene scene = new Scene(pane, WIDTH, HEIGHT);
         stage.setScene(scene);
         stage.show();
+
+        pane.requestFocus();
     }
 }
