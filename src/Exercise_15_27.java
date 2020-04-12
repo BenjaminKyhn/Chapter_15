@@ -28,6 +28,9 @@ public class Exercise_15_27 extends Application {
         pt.setCycleCount(Timeline.INDEFINITE);
         pt.play();
 
+        pane.setOnMousePressed(e -> pt.pause());
+        pane.setOnMouseReleased(e -> pt.play());
+
         Scene scene = new Scene(pane, WIDTH, HEIGHT);
         stage.setScene(scene);
         stage.show();
