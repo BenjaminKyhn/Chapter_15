@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class Exercise_15_35 extends Application {
+public class Exercise_15_34 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         LatticePane latticePane = new LatticePane(16, 20);
